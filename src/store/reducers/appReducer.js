@@ -10,7 +10,7 @@ const appReducer = (state = initState, action) => {
     case actionTypes.GET_HOME:
       return state;
     default:
-      break;
+      return state;
   }
 };
 
