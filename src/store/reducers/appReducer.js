@@ -1,0 +1,17 @@
+import actionTypes from "../actions/actionTypes";
+
+const initState = {
+  homeData: [],
+  state: "Hello",
+};
+
+const appReducer = (state = initState, action) => {
+  switch (action.type) {
+    case actionTypes.GET_HOME:
+      return state;
+    default:
+      break;
+  }
+};
+
+export default appReducer;
