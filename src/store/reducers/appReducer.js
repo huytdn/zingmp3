@@ -1,14 +1,22 @@
 import actionTypes from "../actions/actionTypes";
 
 const initState = {
-  homeData: [],
-  state: "Hello",
+  banner: [],
 };
 
 const appReducer = (state = initState, action) => {
   switch (action.type) {
     case actionTypes.GET_HOME:
-      return state;
+      console.log(action);
+      return {
+        ...state,
+        banner:
+          action.homeData?.find(
+            (item) =>
+              item.banner ===
+              "https://zmp3-static.zmdcdn.me/skins/zmp3-v5.2/images/chart-new-release-vn.png"
+          )?.items || [],
+      };
     default:
       return state;
   }
