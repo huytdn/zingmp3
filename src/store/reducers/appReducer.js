@@ -11,11 +11,8 @@ const appReducer = (state = initState, action) => {
       return {
         ...state,
         banner:
-          action.homeData?.find(
-            (item) =>
-              item.banner ===
-              "https://zmp3-static.zmdcdn.me/skins/zmp3-v5.2/images/chart-new-release-vn.png"
-          )?.items || [],
+          action.homeData?.find((item) => item.sectionType === "banner")
+            ?.items || [],
       };
     default:
       return state;
